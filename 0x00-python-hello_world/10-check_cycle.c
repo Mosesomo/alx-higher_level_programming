@@ -13,7 +13,7 @@ int check_cycle(listint_t *list)
 
 	if (!list)
 		return (0);
-	while (camel && horse->next)
+	while (camel && horse && horse->next)
 	{
 		if (camel == horse)
 			return (1);

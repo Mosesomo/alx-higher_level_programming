@@ -15,10 +15,10 @@ int check_cycle(listint_t *list)
 		return (0);
 	while (camel && horse && horse->next)
 	{
-		if (camel == horse)
-			return (1);
 		camel = camel->next;
 		horse = horse->next->next;
+		if (camel == horse)
+			return (1);
 	}
 	return (0);
 }

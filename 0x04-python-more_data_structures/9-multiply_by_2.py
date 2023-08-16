@@ -6,4 +6,3 @@ def multiply_by_2(a_dictionary):
     for i in dict_keys:
         new_dict[i] *= 2
     return new_dict
-

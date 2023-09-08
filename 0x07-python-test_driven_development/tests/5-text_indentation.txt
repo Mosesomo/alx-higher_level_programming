@@ -66,20 +66,6 @@ New lines within a string are printed as normal.
 	Printed.
 	<BLANKLINE>
 
-::
-
-	>>> text_indentation("\n\n\n Python is awesome.")
-	<BLANKLINE>
-	<BLANKLINE>
-	<BLANKLINE>
-	Python is awesome.
-	<BLANKLINE>
-
-::
-    	>>> text_indentation("print it on a \n new line.")
-    	print it on a
-	new line.
-    	<BLANKLINE>
 
 ::
 

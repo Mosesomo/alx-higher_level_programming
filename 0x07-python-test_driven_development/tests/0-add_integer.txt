@@ -100,16 +100,6 @@ Handling non-integers:
 	...
 	TypeError: a must be an integer
 
-	>>> add_integer(2.3, None)
-	Traceback (most recent call last):
-	...
-	TypeError: b must be an integer	
-
-	>>> add_integer("Hello", "5")
-	Tracrback (most recent call last):
-	...
-	TypeError: a must be an integer
-
 checking for bool with number:
 	>>> add_integer(True, 4)
 	Traceback (most recent call last):

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module defines a function that return a list of 
+"""This module defines a function that return a list of
     available attributes and methods in an object
 """
 

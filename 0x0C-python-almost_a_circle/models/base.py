@@ -101,16 +101,17 @@ class Base:
         """Deserializing in csv"""
 
         filename = "{}.csv".format(cls.__name__)
+        list_dicts = []
         try:
             with open(filename, "r", newline="") as csv_file:
                 if cls.__name__ == "Rectangle":
                     field_names = ["id", "width", "height", "x", "y"]
                 else:
                     field_names = ["id", "size", "x", "y"]
-                list_dicts = csv.DictReader(csv_file, fieldnames=field_names)
-                lists_dicts = dict([key, int(value)])
-                for key, value in d.items():
-                    for d in list_dicts:
-                        return [cls.create(**d) for d in list_dicts]
+                csv_reader = csv.DictReader(csv_file, fieldnames=field_names)
+                for row in csv_reader:
+                    row_dicts = {key: int(val) for key, val in row.items()}
+                    list_dicts.append(row_dicts)
+                return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []

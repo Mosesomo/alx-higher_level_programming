@@ -75,7 +75,7 @@ class Base:
                 json_string = f.read()
                 list_objs = cls.from_json_string(json_string)
             return [cls.create(**obj_dict) for obj_dict in list_objs]
-        except FileNotFoundError:
+        except IOError:
             return []
 
     @classmethod
@@ -111,5 +111,5 @@ class Base:
                 for key, value in d.items():
                     for d in list_dicts:
                         return [cls.create(**d) for d in list_dicts]
-        except FileNotFoundError:
+        except IOError:
             return []

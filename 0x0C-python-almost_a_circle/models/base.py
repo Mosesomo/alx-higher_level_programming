@@ -50,7 +50,7 @@ class Base:
         """returns the list of the JSON string representation json_string"""
 
         if json_string is None:
-            return "[]"
+            return []
         else:
             return json.loads(json_string)
 

@@ -212,6 +212,104 @@ class TestRectangleHeight(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             Rectangle(4, 0)
 
+class TestRectangle_x(unittest.TestCase):
+    """This class represents unittest for initializing
+        x attribute
+    """
+
+    def test_None_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(2, 3, None)
+
+    def test_string_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(4, 3, "3", 4)
+
+    def test_complex_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(3, 4, complex(4))
+
+    def test_dict_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(3, 5, {"x": 4, "y": 6})
+
+    def test_list_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(4, 3, [1, 2, 3])
+
+    def test_tuple_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(4, 5, (1, 3))
+
+    def test_set_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(4, 6, {1, 2, 3, 4})
+
+    def test_frozen_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(6, 8, frozenset({1, 2, 3}))
+
+    def test_range_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(5, 7, range(7))
+
+    def test_infinite_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(5, 4, float('inf'))
+
+    def test_zero_x(self):
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+            Rectangle(2, 4, -6)
+
+
+class TestRectangle_y(unittest.TestCase):
+    """unittests for testing initialization of Rectangle x attribute"""
+
+    def test_None_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Rectangle(2, 3, 3, None)
+
+    def test_string_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Rectangle(4, 3, 3, "4")
+
+    def test_complex_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Rectangle(3, 4, 5, complex(4))
+
+    def test_dict_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Rectangle(3, 5, 5, {"x": 4, "y": 6})
+
+    def test_list_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Rectangle(4, 3, 3, [1, 2, 3])
+
+    def test_tuple_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Rectangle(4, 5, 5, (1, 3))
+
+    def test_set_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Rectangle(4, 6, 6, {1, 2, 3, 4})
+
+    def test_frozen_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Rectangle(6, 8, 8, frozenset({1, 2, 3}))
+
+    def test_range_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Rectangle(5, 7, 7, range(7))
+
+    def test_infinite_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Rectangle(5, 4, 4, float('inf'))
+
+    def test_zero_y(self):
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+            Rectangle(2, 4, 6, -6)
+
+
 
 if __name__ == '__main__':
     unittest.main()

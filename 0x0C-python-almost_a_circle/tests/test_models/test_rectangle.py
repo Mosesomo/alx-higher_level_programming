@@ -212,6 +212,7 @@ class TestRectangleHeight(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             Rectangle(4, 0)
 
+
 class TestRectangle_x(unittest.TestCase):
     """This class represents unittest for initializing
         x attribute
@@ -309,6 +310,28 @@ class TestRectangle_y(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Rectangle(2, 4, 6, -6)
 
+
+class TestRectangleArea(unittest.TestCase):
+    """This unittest tests for area of the rectangle"""
+
+    def test_small_area(self):
+        r = Rectangle(12, 3, 0, 0, 7)
+        self.assertEqual(r.area(), 36)
+
+    def test_large_area(self):
+        r = Rectangle(999999, 999999, 0, 0, 4)
+        self.assertEqual(r.area(), 999998000001)
+
+    def test_changed_attribute(self):
+        r = Rectangle(4, 7, 2, 2, 6)
+        r.width = 8
+        r.height = 10
+        self.assertEqual(r.area(), 80)
+
+    def test_one_arg(self):
+        r = Rectangle(10, 23, 0, 0, 4)
+        with self.assertRaises(TypeError):
+            r.area(3)
 
 
 if __name__ == '__main__':

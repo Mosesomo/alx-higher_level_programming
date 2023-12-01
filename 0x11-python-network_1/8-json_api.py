@@ -7,12 +7,9 @@ import sys
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 1:
-        letter = ""
-    else:
-        letter = sys.argv[1]
-    playload = {'d': letter}
-    req = requests.post('http://0.0.0.0:5000/search_user', data=playload)
+    letter = "" if len(sys.argv) == 1 else sys.argv[1]
+    data = {'d': letter}
+    req = requests.post('http://0.0.0.0:5000/search_user', data=data)
     try:
         response = req.json()
         if response == {}:

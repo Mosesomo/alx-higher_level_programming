@@ -7,8 +7,11 @@ import sys
 
 
 if __name__ == "__main__":
-    letter = "" if len(sys.argv) == 1 else sys.argv[1]
-    data = {'d': letter}
+    if len(sys.argv) == 1:
+        letter = ""
+    else:
+        letter = sys.argv[1]
+    data = {'q': letter}
     req = requests.post('http://0.0.0.0:5000/search_user', data=data)
     try:
         response = req.json()

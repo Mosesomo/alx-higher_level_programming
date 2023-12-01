@@ -13,7 +13,7 @@ if __name__ == "__main__":
     else:
         letter = sys.argv[1]
     playload = {'d': letter}
-    req = requests.post('http://0.0.0.0:5000/search_user', playload)
+    req = requests.post('http://0.0.0.0:5000/search_user', data=playload)
     try:
         response = req.json()
         if response == {}:

@@ -5,6 +5,13 @@
 
 
 def find_peak(list_of_integers):
+    """_summary_
+
+    Args:
+        list_of_integers (int): list of integers to find the peak of
+    Returns: The peak of list_of_integers or none if list is empty
+    """
+
     size = len(list_of_integers)
     low = 0
     high = size - 1

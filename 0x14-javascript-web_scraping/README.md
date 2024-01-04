@@ -1,0 +1,3 @@
+JAVASCRIPT WEB SCRAPING
+____________________________________________________________
+JavaScript web scraping involves using JavaScript to extract information from websites. This can be done by leveraging libraries like Cheerio or Puppeteer. Cheerio simplifies HTML parsing, while Puppeteer provides a headless browser for more complex tasks. With these tools, you can navigate through a webpage's DOM (Document Object Model) and extract desired data, automate interactions, or perform tasks like taking screenshots. Keep in mind that web scraping should comply with the website's terms of service to avoid legal issues.
